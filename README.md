@@ -1,3 +1,9 @@
+# Installation
+
+```bash
+mkdir -p ~/Projects && git clone git@github.com:marian13/code_review.git
+```
+
 # Requirements
 
 - [Task](https://taskfile.dev/).
