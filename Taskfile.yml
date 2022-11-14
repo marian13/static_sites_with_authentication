@@ -7,7 +7,16 @@ tasks:
       # NOTE: Start `yarn start` for code-notes (rules) as well.
       # See `config/initializers/static.rb`.
       #
+      # NOTE: Open `http://localhost:3000/`
+      #
       - bundle exec rails server
+
+  app:rules:start:
+    cmds:
+      ##
+      # NOTE: Open `http://localhost:8000/`
+      #
+      - cd static_sites/code-notes && yarn dev
 
   deps:install:
     cmds:
