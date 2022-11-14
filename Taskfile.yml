@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  app:start:
+    cmds:
+      ##
+      # NOTE: Start `yarn start` for code-notes (rules) as well.
+      # See `config/initializers/static.rb`.
+      #
+      - bundle exec rails server
+
+  deps:install:
+    cmds:
+      - bundle install
+      - cd static_sites/code-notes && yarn install
