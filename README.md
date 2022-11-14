@@ -72,7 +72,7 @@ cd ~/Projects/code_review && task deps:install
 
 - `app` - the whole app.
 
-- `rules` - subapp located at `localhost:3000/rules`.
+- `rules` - sub-app located at `localhost:3000/rules`.
 
 ## Tech Stack
 
