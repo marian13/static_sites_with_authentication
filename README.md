@@ -1,10 +1,12 @@
-# Installation
+# Code Review
+
+## Installation
 
 ```bash
 mkdir -p ~/Projects && git clone git@github.com:marian13/code_review.git
 ```
 
-# Requirements
+## Requirements
 
 - [Task](https://taskfile.dev/).
 
@@ -16,15 +18,15 @@ mkdir -p ~/Projects && git clone git@github.com:marian13/code_review.git
 
 - [Node.js v18.12.1](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V18.md#18.12.1).
 
-# Setup
+## Setup
 
 ```bash
 cd ~/Projects/code_review && task deps:install
 ```
 
-# Development
+## Development
 
-## How to start a local server for the whole app?
+### How to start a local server for the whole app?
 
 - Run the following command:
 
@@ -36,7 +38,7 @@ cd ~/Projects/code_review && task deps:install
 
 **NOTE:** `rules` is NOT hot-reloaded.
 
-## How to start a local `rules` server with hot reloading?
+### How to start a local `rules` server with hot reloading?
 
 - Run the following command:
 
@@ -46,9 +48,9 @@ cd ~/Projects/code_review && task deps:install
 
 - Open [http://localhost:8000](http://localhost:8000/) in your browser.
 
-# Seeds
+## Seeds
 
-## How to create a user?
+### How to create a user?
 
 - Open Rails console:
 
