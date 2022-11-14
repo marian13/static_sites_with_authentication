@@ -54,6 +54,9 @@ group :development, :test do
 end
 
 group :development do
+  # Flexible authentication solution for Rails [https://github.com/heartcombo/devise]
+  gem "devise"
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
