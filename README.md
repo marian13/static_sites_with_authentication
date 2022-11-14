@@ -68,6 +68,12 @@ cd ~/Projects/code_review && task deps:install
 
 - Don't forget to replace email and password.
 
+## Glossary
+
+- `app` - the whole app.
+
+- `rules` - subapp located at `localhost:3000/rules`.
+
 ## Tech Stack
 
 ### Application
@@ -84,4 +90,4 @@ cd ~/Projects/code_review && task deps:install
 
 ### Task runner
 
-- [Task](https://taskfile.dev/)
+- [Task](https://taskfile.dev/).

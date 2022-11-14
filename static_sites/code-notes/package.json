@@ -10,10 +10,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "clean": "gatsby clean",
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider gatsby develop",
-    "start": "gatsby serve"
+    "dev": "gatsby develop",
+    "start": "gatsby serve --prefix-paths"
   },
   "dependencies": {
     "gatsby": "^3.3.1",
