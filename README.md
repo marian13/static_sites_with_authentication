@@ -48,6 +48,8 @@ cd ~/Projects/code_review && task deps:install
 
 - Open [http://localhost:8000](http://localhost:8000/) in your browser.
 
+**NOTE:** Hot-reloaded `rules` server has no backend access.
+
 ## Seeds
 
 ### How to create a user?
