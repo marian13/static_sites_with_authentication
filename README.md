@@ -67,3 +67,21 @@ cd ~/Projects/code_review && task deps:install
   ```
 
 - Don't forget to replace email and password.
+
+## Tech Stack
+
+### Application
+
+- [Rails](https://rubyonrails.org/).
+
+- [Devise](https://github.com/heartcombo/devise).
+
+- [static-rails](https://github.com/testdouble/static-rails).
+
+- [Gatsby](https://www.gatsbyjs.com/docs/quick-start/).
+
+- [A starter for the "Code Notes" Gatsby theme](https://github.com/mrmartineau/gatsby-starter-code-notes).
+
+### Task runner
+
+- [Task](https://taskfile.dev/)
