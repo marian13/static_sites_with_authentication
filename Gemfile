@@ -71,7 +71,6 @@ group :test do
   gem "webdrivers"
 end
 
-
 ##
 # Flexible authentication solution for Rails (https://github.com/heartcombo/devise).
 #
