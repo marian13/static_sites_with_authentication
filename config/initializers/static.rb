@@ -21,7 +21,7 @@ StaticRails.config do |config|
       server_host: "localhost",
       server_port: "9000",
       server_path: "/",
-      compile_command: "yarn build",
+      compile_command: "yarn install && yarn build",
       compile_dir: "static/blog/dist",
       compile_404_file_path: "404.html"
     }
