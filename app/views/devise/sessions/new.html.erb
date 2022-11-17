@@ -25,16 +25,13 @@
           <% end %>
 
           <div class="col s12" style="margin-top: 20px;">
-            <%= f.button type: "submit", class: "btn waves-effect waves-light" do %>
-              <span>Log In</span>
-              <i class="material-icons right">send</i>
-            <% end %>
+            <%= render partial: "devise/partials/forms/submit", locals: {form: f, text: "Log in"} %>
           </div>
         </div>
+      </div>
 
-        <div class="card-action">
-          <%= render "devise/partials/links" %>
-        </div>
+      <div class="card-action">
+        <%= render "devise/partials/links" %>
       </div>
     </div>
   <% end %>
