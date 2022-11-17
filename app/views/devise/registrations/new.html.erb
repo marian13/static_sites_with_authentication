@@ -1,0 +1,36 @@
+<%= render "devise/partials/card" do %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render partial: "devise/partials/error_messages", locals: {resource: resource} %>
+
+    <div class="card hoverable">
+      <div class="card-content">
+        <div class="row">
+          <span class="card-title center-align">Sign up</span>
+
+          <div class="input-field col s12">
+            <%= f.email_field :email, autocomplete: "email", class: "validate" %>
+            <%= f.label :email %>
+          </div>
+
+          <div class="input-field col s12">
+            <%= f.password_field :password, autocomplete: "new-password" %>
+            <%= f.label :password %>
+          </div>
+
+          <div class="input-field col s12">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            <%= f.label :password_confirmation %>
+          </div>
+
+          <div class="col s12" style="margin-top: 20px;">
+            <%= render partial: "devise/partials/forms/submit", locals: {form: f, text: "Sign up"} %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="card-action">
+        <%= render "devise/partials/links" %>
+      </div>
+    </div>
+  </div>
+<% end %>

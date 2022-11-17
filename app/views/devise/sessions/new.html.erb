@@ -1,0 +1,38 @@
+<%= render "devise/partials/card" do %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="card hoverable">
+      <div class="card-content">
+        <div class="row">
+          <span class="card-title center-align">Log in</span>
+
+          <div class="input-field col s12">
+            <%= f.email_field :email, autocomplete: "email", class: "validate" %>
+            <%= f.label :email %>
+          </div>
+
+          <div class="input-field col s12">
+            <%= f.password_field :password, autocomplete: "current-password" %>
+            <%= f.label :password %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="col s12">
+              <%= f.label :remember_me do %>
+                <%= f.check_box :remember_me %>
+                <span>Remember Me</span>
+              <% end %>
+            </div>
+          <% end %>
+
+          <div class="col s12" style="margin-top: 20px;">
+            <%= render partial: "devise/partials/forms/submit", locals: {form: f, text: "Log in"} %>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-action">
+        <%= render "devise/partials/links" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

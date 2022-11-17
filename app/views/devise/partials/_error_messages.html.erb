@@ -1,0 +1,7 @@
+<% if resource.errors.any? %>
+  <% resource.errors.full_messages.compact_blank.each do |message| %>
+    <% content_for :alerts do %>
+      <%= render partial: "devise/partials/alert", locals: {text: message} %>
+    <% end %>
+  <% end %>
+<% end %>
