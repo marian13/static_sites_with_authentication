@@ -95,6 +95,12 @@ cd ~/Projects/code_review && task deps:install
 
 - [A starter for the "Code Notes" Gatsby theme](https://github.com/mrmartineau/gatsby-starter-code-notes).
 
+- [Materialize](https://materializecss.com/).
+
+## Databases
+
+- [SQLite](https://www.sqlite.org/index.html).
+
 ### Task runner
 
 - [Task](https://taskfile.dev/).
