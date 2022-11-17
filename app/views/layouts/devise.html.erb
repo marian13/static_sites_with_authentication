@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Code Review</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Materialize.css Fonts -->
+    <!-- https://materializecss.com/getting-started.html -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize.css Stylesheets -->
+    <!-- https://materializecss.com/getting-started.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+
+  <body>
+    <!-- NOTE: Added by `bundle exec rails generate devise:install`. -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+    <!-- Materialize.css JavaScripts -->
+    <!-- https://materializecss.com/getting-started.html -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      /**
+       * NOTE: Needed to initialize buttons effects, for example.
+       * https://materializecss.com/auto-init.html
+       */
+      M.AutoInit();
+    </script>
+  </body>
+</html>
