@@ -13,12 +13,39 @@
     <!-- Materialize.css Stylesheets -->
     <!-- https://materializecss.com/getting-started.html -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Materialize.css Alerts Stylesheets -->
+    <!-- https://codepen.io/j_holtslander/pen/MzNPbP?css-preprocessor=scss -->
+    <style>
+      .alert .card-content span {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-right:4px;
+      }
+
+      .alert .card-content .material-icons {
+        font-size: 1.5em;
+        position: relative;
+        top: 5px;
+        margin-right: 0.5em;
+      }
+    </style>
   </head>
 
   <body>
     <!-- NOTE: Added by `bundle exec rails generate devise:install`. -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice.present?  %>
+      <%= render "devise/partials/notice" do %>
+        <%= notice %>
+      <% end %>
+    <% end %>
+
+    <!-- NOTE: Added by `bundle exec rails generate devise:install`. -->
+    <% if alert.present?  %>
+      <%= render "devise/partials/alert" do %>
+        <%= alert %>
+      <% end %>
+    <% end %>
 
     <%= yield %>
 
