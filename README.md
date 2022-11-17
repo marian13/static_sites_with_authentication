@@ -4,7 +4,7 @@
 
 | Component | [Environment](https://en.wikipedia.org/wiki/Deployment_environment) | Location |
 | - | - | - |
-| App | Local | [https://localhost:3000](https://localhost:3000/) |
+| App | Local | [http://localhost:3000](http://localhost:3000/) |
 | App | Production | [https://code-review.fly.dev](https://code-review.fly.dev) |
 
 ## Installation
