@@ -77,6 +77,6 @@ end
 gem "devise"
 
 ##
-# Build & serve static sites from your Rails app (https://github.com/testdouble/static-rails).
+# Easily include static pages in your Rails app (https://github.com/thoughtbot/high_voltage).
 #
-gem "static-rails"
+gem "high_voltage"
