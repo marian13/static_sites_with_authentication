@@ -7,12 +7,12 @@
 
           <div class="input-field col s12">
             <%= f.email_field :email, autocomplete: "email", class: "validate" %>
-            <%= f.label :email %><br />
+            <%= f.label :email %>
           </div>
 
           <div class="input-field col s12">
             <%= f.password_field :password, autocomplete: "current-password" %>
-            <%= f.label :password %><br />
+            <%= f.label :password %>
           </div>
 
           <% if devise_mapping.rememberable? %>
