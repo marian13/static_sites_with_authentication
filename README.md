@@ -1,5 +1,12 @@
 # Code Review
 
+## Quick Reference
+
+| Component | [Environment](https://en.wikipedia.org/wiki/Deployment_environment) | Location |
+| - | - | - |
+| App | Local | [https://localhost:3000](https://localhost:3000/) |
+| App | Production | [https://code-review.fly.dev](https://code-review.fly.dev) |
+
 ## Installation
 
 ```bash
@@ -52,7 +59,7 @@ cd ~/Projects/code_review && task deps:install
 
 ## Seeds
 
-### How to create a user?
+### How to create a user locally?
 
 - Open Rails console:
 
@@ -91,3 +98,7 @@ cd ~/Projects/code_review && task deps:install
 ### Task runner
 
 - [Task](https://taskfile.dev/).
+
+### Hosting
+
+- [Fly.io](https://fly.io/).
