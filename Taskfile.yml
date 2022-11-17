@@ -64,7 +64,7 @@ tasks:
 
   ##
   # FIX: Does NOT work since `fly ssh console -C` does NOT wait `tail -f` to complete, it exits immediately.
-  # Use `task production:env:console` instead.
+  # Use `task production:env:console` or `task production:app:output` instead.
   #
   # https://fly.io/docs/rails/the-basics/run-tasks-and-consoles/#rails-console
   #
