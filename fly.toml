@@ -11,6 +11,11 @@ kill_timeout = 5
 processes = []
 
 [build]
+  ##
+  # NOTE: `dockerfile` docs.
+  # https://fly.io/docs/reference/configuration/#specify-a-dockerfile
+  #
+  dockerfile = "Dockerfile.production"
   [build.args]
     BUILD_COMMAND = "bin/rails fly:build"
     SERVER_COMMAND = "bin/rails fly:server"

@@ -22,3 +22,53 @@ tasks:
     cmds:
       - bundle install
       - cd static_sites/code-notes && yarn install
+
+  ##
+  # https://fly.io/docs/rails/the-basics/deployments/#running-migrations
+  #
+  production:app:db:migrate:
+    cmds:
+      - fly ssh console -C "app/bin/rails db:migrate"
+
+  ##
+  # https://fly.io/docs/rails/getting-started/
+  #
+  production:app:deploy:
+    cmds:
+      - fly deploy
+
+  ##
+  # https://fly.io/docs/rails/the-basics/run-tasks-and-consoles/#rails-console
+  #
+  # NOTE: Make sure you have executed `fly launch` if you have a new application.
+  #
+  production:app:console:
+    cmds:
+      - fly ssh console -C "app/bin/rails console"
+
+  ##
+  # https://fly.io/docs/rails/the-basics/run-tasks-and-consoles/#rails-console
+  #
+  # IMPORTANT: Make sure `RAILS_LOG_TO_STDOUT` env var is `false` in `Dockerfile.production`.
+  # Use `task production:app:output` if NOT.
+  #
+  production:app:logs:
+    cmds:
+      - fly ssh console -C "mkdir -p app/bin/rails/log && touch app/bin/rails/log/production.log && tail -f app/bin/rails/log/production.log"
+
+  ##
+  # https://fly.io/docs/rails/the-basics/run-tasks-and-consoles/#rails-console
+  #
+  # IMPORTANT: Make sure `RAILS_LOG_TO_STDOUT` env var is `true` in `Dockerfile.production`.
+  # Use `task production:app:logs` if NOT.
+  #
+  production:app:output:
+    cmds:
+      - fly logs
+
+  ##
+  # https://fly.io/docs/rails/the-basics/deployments/#run-ad-hoc-tasks-after-deploying
+  #
+  production:env:console:
+    cmds:
+    - fly ssh console
