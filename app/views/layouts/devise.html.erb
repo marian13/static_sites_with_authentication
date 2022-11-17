@@ -2,21 +2,27 @@
 <html>
   <head>
     <title>Code Review</title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <!-- Materialize.css Fonts -->
+    <!-- Materialize.css Fonts. -->
     <!-- https://materializecss.com/getting-started.html -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Materialize.css Stylesheets -->
+    <!-- Materialize.css Stylesheets. -->
     <!-- https://materializecss.com/getting-started.html -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Materialize.css Alerts Stylesheets -->
+    <!-- Materialize.css Alerts Stylesheets. -->
     <!-- https://codepen.io/j_holtslander/pen/MzNPbP?css-preprocessor=scss -->
     <style>
+      /**
+       * CSS Selector Reference.
+       * https://www.w3schools.com/csSref/css_selectors.php
+       */
       .alert .card-content span {
         font-weight: bold;
         font-size: 1.1em;
@@ -34,22 +40,16 @@
 
   <body>
     <!-- NOTE: Added by `bundle exec rails generate devise:install`. -->
-    <% if notice.present?  %>
-      <%= render "devise/partials/notice" do %>
-        <%= notice %>
-      <% end %>
-    <% end %>
+    <%= render partial: "devise/partials/notice", locals: {text: notice} if notice.present? %>
+    <%= yield :notices if content_for?(:notices) %>
 
     <!-- NOTE: Added by `bundle exec rails generate devise:install`. -->
-    <% if alert.present?  %>
-      <%= render "devise/partials/alert" do %>
-        <%= alert %>
-      <% end %>
-    <% end %>
+    <%= render partial: "devise/partials/alert", locals: {text: alert} if alert.present? %>
+    <%= yield :alerts if content_for?(:alerts) %>
 
     <%= yield %>
 
-    <!-- Materialize.css JavaScripts -->
+    <!-- Materialize.css JavaScripts. -->
     <!-- https://materializecss.com/getting-started.html -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
