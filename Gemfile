@@ -75,8 +75,3 @@ end
 # Flexible authentication solution for Rails (https://github.com/heartcombo/devise).
 #
 gem "devise"
-
-##
-# Build & serve static sites from your Rails app (https://github.com/testdouble/static-rails).
-#
-gem "static-rails"
