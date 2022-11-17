@@ -22,8 +22,13 @@ StaticRails.config do |config|
       server_port: "9000",
       server_path: "/",
       compile_command: "yarn install && yarn build",
-      compile_dir: "static/blog/dist",
-      compile_404_file_path: "404.html"
+      ##
+      # NOTE: `gatsby build` generates `public` folder.
+      # - https://www.gatsbyjs.com/docs/reference/gatsby-project-structure/#folders
+      # - https://www.gatsbyjs.com/docs/conceptual/overview-of-the-gatsby-build-process/#understanding-gatsby-build-build-time
+      #
+      compile_dir: "static_sites/code-notes/public",
+      compile_404_file_path: "static_sites/code-notes/public/404/index.html"
     }
   ]
 end
