@@ -25,6 +25,10 @@ tasks:
       #
       - cd static_sites/code-notes && yarn install && yarn dev
 
+  test:
+    cmds:
+      - bundle exec rspec
+
   deps:install:
     cmds:
       - bundle install
