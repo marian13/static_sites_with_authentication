@@ -9,14 +9,21 @@ tasks:
       #
       # NOTE: Open `http://localhost:3000/`
       #
+      - bundle install
+      - bundle exec rails db:migrate
+      - cd static_sites/code-notes && yarn install && yarn build
+      - rm -rf app/views/static
+      - mkdir -p app/views/static
+      - cp -r static_sites/code-notes/public app/views/static/rules
       - bundle exec rails server
+    interactive: true
 
   app:rules:start:
     cmds:
       ##
       # NOTE: Open `http://localhost:8000/`
       #
-      - cd static_sites/code-notes && yarn dev
+      - cd static_sites/code-notes && yarn install && yarn dev
 
   deps:install:
     cmds:

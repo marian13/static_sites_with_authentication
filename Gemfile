@@ -80,3 +80,8 @@ end
 # Flexible authentication solution for Rails (https://github.com/heartcombo/devise).
 #
 gem "devise"
+
+##
+# Easily include static pages in your Rails app (https://github.com/thoughtbot/high_voltage).
+#
+gem "high_voltage"
