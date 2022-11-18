@@ -89,7 +89,7 @@ cd ~/Projects/code_review && task deps:install
 
 - [Devise](https://github.com/heartcombo/devise).
 
-- [static-rails](https://github.com/testdouble/static-rails).
+- [high_voltage](https://github.com/thoughtbot/high_voltage).
 
 - [Gatsby](https://www.gatsbyjs.com/docs/quick-start/).
 
@@ -100,6 +100,10 @@ cd ~/Projects/code_review && task deps:install
 ## Databases
 
 - [SQLite](https://www.sqlite.org/index.html).
+
+## Tests
+
+- [RSpec](https://rspec.info/).
 
 ### Task runner
 
