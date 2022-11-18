@@ -62,6 +62,11 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  ##
+  # Byebug is a simple to use and feature rich debugger for Ruby (https://github.com/deivid-rodriguez/byebug).
+  #
+  gem "byebug"
 end
 
 group :test do
