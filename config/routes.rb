@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   ##
   # https://github.com/thoughtbot/high_voltage#override
   #
-  get "/rules/*id" => "rules#show", as: :rule, format: falses
+  # get "/rules" => "pages#show", format: false, defaults: {id: "index"}
+  # get "/rules/*id" => "pages#show", format: false, defaults: {id: "index"}
+
+  get '/:id', to: "static#show", constraints: { id: /(rules)\/?.*/ }
 end
