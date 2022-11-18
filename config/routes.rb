@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   # get "/rules" => "pages#show", format: false, defaults: {id: "index"}
   # get "/rules/*id" => "pages#show", format: false, defaults: {id: "index"}
 
+  ##
+  # IMPORTANT: Regex must be as strict as it is possible.
+  # See `app/controllers/static_controller.rb`.
+  #
   get '/:id', to: "static#show", constraints: { id: /(rules)\/?.*/ }
 end
