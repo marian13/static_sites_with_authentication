@@ -97,11 +97,11 @@ cd ~/Projects/code_review && task deps:install
 
 - [Materialize](https://materializecss.com/).
 
-## Databases
+### Databases
 
 - [SQLite](https://www.sqlite.org/index.html).
 
-## Tests
+### Tests
 
 - [RSpec](https://rspec.info/).
 
