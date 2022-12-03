@@ -90,3 +90,8 @@ gem "devise"
 # Easily include static pages in your Rails app (https://github.com/thoughtbot/high_voltage).
 #
 gem "high_voltage"
+
+##
+# Service object pattern implementation in Ruby (https://github.com/marian13/convenient_service).
+#
+gem "convenient_service", "~> 0.1.0"
