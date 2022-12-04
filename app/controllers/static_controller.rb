@@ -6,15 +6,13 @@
 class StaticController < ApplicationController
   include HighVoltage::StaticPage
 
-  before_action :authenticate_user!
-
   ##
   # IMPORTANT: It is ok to disable forgery protection here since static content is trusted.
   #
   # Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go
   # ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
   #
-  protect_from_forgery except: :show
+  protect_from_forgery except: :show, prepend: true
 
   def show
     ##
