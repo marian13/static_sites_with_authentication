@@ -12,7 +12,9 @@ class StaticController < ApplicationController
   # Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go
   # ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
   #
-  protect_from_forgery except: :show, prepend: true
+  protect_from_forgery except: :show
+
+  before_action :authenticate_user!
 
   def show
     ##
