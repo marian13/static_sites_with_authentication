@@ -6,8 +6,6 @@
 class StaticController < ApplicationController
   include HighVoltage::StaticPage
 
-  before_action :authenticate_user!
-
   ##
   # IMPORTANT: It is ok to disable forgery protection here since static content is trusted.
   #
@@ -15,6 +13,8 @@ class StaticController < ApplicationController
   # ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
   #
   protect_from_forgery except: :show
+
+  before_action :authenticate_user!
 
   def show
     ##
