@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 ##
-# https://github.com/thoughtbot/high_voltage#override
+# - https://github.com/thoughtbot/high_voltage#override
 #
-class StaticController < ApplicationController
-  include HighVoltage::StaticPage
+class StaticSitesController < ApplicationController
+  include ::HighVoltage::StaticPage
 
   ##
   # IMPORTANT: It is ok to disable forgery protection here since static content is trusted.
@@ -65,7 +65,7 @@ class StaticController < ApplicationController
   #
   #
   def extension
-    File.extname(params[:id])
+    ::File.extname(params[:id])
   end
 
   def template_id_without_extension

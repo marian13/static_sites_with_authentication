@@ -1,4 +1,4 @@
-# Static Pages with Authentication
+# Static Sites with Authentication
 
 ## Quick Reference
 
@@ -10,7 +10,7 @@
 ## Installation
 
 ```bash
-mkdir -p ~/Projects && git clone git@github.com:marian13/static_pages_with_authentication.git
+mkdir -p ~/Projects && git clone git@github.com:marian13/static_sites_with_authentication.git
 ```
 
 ## Requirements
@@ -28,29 +28,29 @@ mkdir -p ~/Projects && git clone git@github.com:marian13/static_pages_with_authe
 ## Setup
 
 ```bash
-cd ~/Projects/static_pages_with_authentication && task deps:install
+cd ~/Projects/static_sites_with_authentication && task install
 ```
 
 ## Development
 
-### How to start a local server for the whole app?
+### How to start a local backend server?
 
 - Run the following command:
 
   ```bash
-  cd ~/Projects/static_pages_with_authentication && task app:start
+  cd ~/Projects/static_sites_with_authentication && task backend:start
   ```
 
 - Open [http://localhost:3000](http://localhost:3000/) in your browser.
 
-**NOTE:** `rules` is NOT hot-reloaded.
+**NOTE:** Static pages are NOT hot-reloaded.
 
-### How to start a local `rules` server with hot reloading?
+### How to start a local static pages server with hot reloading?
 
-- Run the following command:
+- Run the following:
 
   ```bash
-  cd ~/Projects/static_pages_with_authentication && task app:rules:start
+  cd ~/Projects/static_sites_with_authentication && task static_sites:rules:start
   ```
 
 - Open [http://localhost:8000](http://localhost:8000/) in your browser.
@@ -64,7 +64,7 @@ cd ~/Projects/static_pages_with_authentication && task deps:install
 - Open Rails console:
 
   ```bash
-  cd ~/Projects/static_pages_with_authentication && bundle exec rails console
+  cd ~/Projects/static_sites_with_authentication && bundle exec rails console
   ```
 
 - Execute the command below:
@@ -74,12 +74,6 @@ cd ~/Projects/static_pages_with_authentication && task deps:install
   ```
 
 - Don't forget to replace email and password.
-
-## Glossary
-
-- `app` - the whole app.
-
-- `rules` - sub-app located at `localhost:3000/rules`.
 
 ## Tech Stack
 
