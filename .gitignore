@@ -38,6 +38,8 @@
 # NOTE: Ignore static views
 #
 /app/views/static
+
+##
 # NOTE: Ignore byebug.
 #
-.byebug_history
+/.byebug_history

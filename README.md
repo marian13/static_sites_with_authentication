@@ -10,7 +10,7 @@
 ## Installation
 
 ```bash
-mkdir -p ~/Projects && git clone git@github.com:marian13/code_review.git
+mkdir -p ~/Projects && git clone git@github.com:marian13/static_pages_with_authentication.git
 ```
 
 ## Requirements
@@ -28,7 +28,7 @@ mkdir -p ~/Projects && git clone git@github.com:marian13/code_review.git
 ## Setup
 
 ```bash
-cd ~/Projects/code_review && task deps:install
+cd ~/Projects/static_pages_with_authentication && task deps:install
 ```
 
 ## Development
@@ -38,7 +38,7 @@ cd ~/Projects/code_review && task deps:install
 - Run the following command:
 
   ```bash
-  cd ~/Projects/code_review && task app:start
+  cd ~/Projects/static_pages_with_authentication && task app:start
   ```
 
 - Open [http://localhost:3000](http://localhost:3000/) in your browser.
@@ -50,7 +50,7 @@ cd ~/Projects/code_review && task deps:install
 - Run the following command:
 
   ```bash
-  cd ~/Projects/code_review && task app:rules:start
+  cd ~/Projects/static_pages_with_authentication && task app:rules:start
   ```
 
 - Open [http://localhost:8000](http://localhost:8000/) in your browser.
@@ -64,7 +64,7 @@ cd ~/Projects/code_review && task deps:install
 - Open Rails console:
 
   ```bash
-  cd ~/Projects/code_review && bundle exec rails console
+  cd ~/Projects/static_pages_with_authentication && bundle exec rails console
   ```
 
 - Execute the command below:
