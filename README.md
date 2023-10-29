@@ -4,7 +4,7 @@
 
 | Component | [Environment](https://en.wikipedia.org/wiki/Deployment_environment) | Location |
 | - | - | - |
-| App | Local | [http://localhost:3000](http://localhost:3000/) |
+| App | Local | [http://localhost:3000](http://localhost:3000) |
 | App | Production | [https://code-review.fly.dev](https://code-review.fly.dev) |
 
 ## Installation
@@ -15,13 +15,13 @@ mkdir -p ~/Projects && git clone git@github.com:marian13/static_sites_with_authe
 
 ## Requirements
 
-- [Task](https://taskfile.dev/).
+- [Task](https://taskfile.dev).
 
-- Ruby version manager ([asdf](https://asdf-vm.com/) is preferred).
+- Ruby version manager ([asdf](https://asdf-vm.com) is preferred).
 
-- Node.js version manager ([asdf](https://asdf-vm.com/) is preferred).
+- Node.js version manager ([asdf](https://asdf-vm.com) is preferred).
 
-- [Ruby 3.1.0](https://www.ruby-lang.org/en/news/2021/12/25/ruby-3-1-0-released/).
+- [Ruby 3.1.0](https://www.ruby-lang.org/en/news/2021/12/25/ruby-3-1-0-released).
 
 - [Node.js v18.12.1](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V18.md#18.12.1).
 
@@ -41,21 +41,27 @@ cd ~/Projects/static_sites_with_authentication && task install
   cd ~/Projects/static_sites_with_authentication && task backend:start
   ```
 
-- Open [http://localhost:3000](http://localhost:3000/) in your browser.
+- Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-**NOTE:** Static pages are NOT hot-reloaded.
+**NOTE:** Static sites are NOT hot-reloaded.
 
-### How to start a local static pages server with hot reloading?
+### How to start a local static sites server with hot reloading?
 
-- Run the following:
+- For example, for the `rules` static site, the command looks like so:
 
   ```bash
   cd ~/Projects/static_sites_with_authentication && task static_sites:rules:start
   ```
 
-- Open [http://localhost:8000](http://localhost:8000/) in your browser.
+- Open [http://localhost:8000](http://localhost:8000) in your browser.
 
 **NOTE:** Hot-reloaded `rules` server has no backend access.
+
+### How to add a new static site?
+
+- Check how the `static_sites:rules:build` command is implemented and used in the Taskfile.
+
+- Add new static site by analogy.
 
 ## Seeds
 
@@ -79,17 +85,17 @@ cd ~/Projects/static_sites_with_authentication && task install
 
 ### Application
 
-- [Rails](https://rubyonrails.org/).
+- [Rails](https://rubyonrails.org).
 
 - [Devise](https://github.com/heartcombo/devise).
 
 - [high_voltage](https://github.com/thoughtbot/high_voltage).
 
-- [Gatsby](https://www.gatsbyjs.com/docs/quick-start/).
+- [Gatsby](https://www.gatsbyjs.com/docs/quick-start).
 
 - [A starter for the "Code Notes" Gatsby theme](https://github.com/mrmartineau/gatsby-starter-code-notes).
 
-- [Materialize](https://materializecss.com/).
+- [Materialize](https://materializecss.com).
 
 ### Databases
 
@@ -97,12 +103,12 @@ cd ~/Projects/static_sites_with_authentication && task install
 
 ### Tests
 
-- [RSpec](https://rspec.info/).
+- [RSpec](https://rspec.info).
 
 ### Task runner
 
-- [Task](https://taskfile.dev/).
+- [Task](https://taskfile.dev).
 
 ### Hosting
 
-- [Fly.io](https://fly.io/).
+- [Fly.io](https://fly.io).

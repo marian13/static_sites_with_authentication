@@ -11,10 +11,7 @@ tasks:
       #
       - bundle install
       - bundle exec rails db:migrate
-      - cd static_sites/code-notes && yarn install && yarn build
-      - rm -rf app/views/static
-      - mkdir -p app/views/static
-      - cp -r static_sites/code-notes/public app/views/static_sites/rules
+      - task: static_sites:build
       - bundle exec rails server
     interactive: true
 
@@ -97,6 +94,21 @@ tasks:
   production:env:console:
     cmds:
     - fly ssh console
+
+  static_sites:build:
+    cmds:
+      - task: static_sites:clean
+      - task: static_sites:rules:build
+      - cp -r static_sites/code-notes/public app/views/static_sites/rules
+
+  static_sites:clean:
+    cmds:
+      - rm -rf app/views/static_sites
+      - mkdir -p app/views/static_sites
+
+  static_sites:rules:build:
+    cmds:
+      - cd static_sites/code-notes && yarn install && yarn build
 
   static_sites:rules:start:
     cmds:
