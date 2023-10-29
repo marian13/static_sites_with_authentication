@@ -1,4 +1,4 @@
-# Code Review
+# Static Pages with Authentication
 
 ## Quick Reference
 
