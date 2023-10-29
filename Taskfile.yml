@@ -1,15 +1,21 @@
 version: '3'
 
 tasks:
+  backend:console:
+    cmds:
+      - bundle install
+      - bundle exec rails db:create
+      - bundle exec rails db:migrate
+      - bundle exec rails console
+    interactive: true
+
   backend:start:
     cmds:
       ##
-      # NOTE: Start `yarn start` for code-notes (rules) as well.
-      # See `config/initializers/static.rb`.
-      #
       # NOTE: Open `http://localhost:3000`
       #
       - bundle install
+      - bundle exec rails db:create
       - bundle exec rails db:migrate
       - task: static_sites:build
       - bundle exec rails server
