@@ -49,7 +49,7 @@ class StaticSitesController < ApplicationController
   def original_template_id
     name = params[:id]
 
-    name if template_exists?("static/#{name}")
+    name if template_exists?("static_sites/#{name}")
   end
 
   ##
@@ -58,7 +58,7 @@ class StaticSitesController < ApplicationController
   def fallback_template_id
     name = "#{params[:id]}/index"
 
-    name if template_exists?("static/#{name}")
+    name if template_exists?("static_sites/#{name}")
   end
 
   ##
