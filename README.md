@@ -59,7 +59,9 @@ cd ~/Projects/static_sites_with_authentication && task install
 
 ### How to add a new static site?
 
-- Check how the `static_sites:rules:build` command is implemented and used in the Taskfile.
+- Check how the `static_sites:rules:build` command is implemented and used in the [Taskfile](https://github.com/marian13/static_sites_with_authentication/blob/main/Taskfile.yml).
+
+- Adjust the regular expression in the [config/routes.rb](https://github.com/marian13/static_sites_with_authentication/blob/main/config/routes.rb).
 
 - Add new static site by analogy.
 

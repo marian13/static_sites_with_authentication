@@ -10,14 +10,10 @@ Rails.application.routes.draw do
   }
 
   ##
-  # https://github.com/thoughtbot/high_voltage#override
+  # - https://github.com/thoughtbot/high_voltage#override
   #
-  # get "/rules" => "pages#show", format: false, defaults: {id: "index"}
-  # get "/rules/*id" => "pages#show", format: false, defaults: {id: "index"}
-
-  ##
   # IMPORTANT: Regex must be as strict as it is possible.
-  # See `app/controllers/static_controller.rb`.
+  # See `app/controllers/static_sites_controller.rb`.
   #
-  get '/:id', to: "static#show", constraints: { id: /(rules)\/?.*/ }
+  get '/:id', to: "static_sites#show", constraints: { id: /(rules)\/?.*/ }
 end
