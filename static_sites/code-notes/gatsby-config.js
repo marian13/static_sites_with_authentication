@@ -9,7 +9,7 @@ module.exports = {
    * https://www.gatsbyjs.com/docs/reference/gatsby-cli/#develop
    * https://github.com/gatsbyjs/gatsby/discussions/16040
    */
-  pathPrefix: "/rules",
+  pathPrefix: "/code_notes",
   siteMetadata: {
     title: 'gatsby-starter-code-notes',
     description: `A starter for gatsby-theme-code-notes`,
