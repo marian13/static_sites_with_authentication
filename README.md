@@ -5,7 +5,7 @@
 | Component | [Environment](https://en.wikipedia.org/wiki/Deployment_environment) | Location |
 | - | - | - |
 | App | Local | [http://localhost:3000](http://localhost:3000) |
-| App | Production | [https://static-sites-with-authentication.fly.dev/](https://static-sites-with-authentication.fly.dev/) |
+| App | Production | [https://static-sites-with-authentication.fly.dev](https://static-sites-with-authentication.fly.dev) |
 
 ## Installation
 
