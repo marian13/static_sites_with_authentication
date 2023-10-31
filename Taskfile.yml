@@ -100,6 +100,8 @@ tasks:
       - task: static_sites:clean
       - task: static_sites:code_notes:build
       - cp -r static_sites/code-notes/public app/views/static_sites/code_notes
+      - task: static_sites:docusaurus:build
+      - cp -r static_sites/docusaurus/build app/views/static_sites/docusaurus
 
   static_sites:clean:
     cmds:
@@ -116,6 +118,17 @@ tasks:
       # NOTE: Open `http://localhost:8000`.
       #
       - cd static_sites/code-notes && yarn install && yarn dev
+
+  static_sites:docusaurus:build:
+    cmds:
+      - cd static_sites/docusaurus && npx docusaurus build
+
+  static_sites:docusaurus:start:
+    cmds:
+      ##
+      # NOTE: Open `http://localhost:8000`.
+      #
+      - cd static_sites/docusaurus && npx docusaurus start
 
   test:
     cmds:
