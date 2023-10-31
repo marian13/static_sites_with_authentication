@@ -37,14 +37,14 @@ class StaticSitesController < ApplicationController
   ##
   # NOTE: Works in a similar way as `import` in JS.
   # Tries to find the first existing template id.
-  # For example, when `params[:id]` is "rules", it may return "rules" or "rules/index" or `nil`.
+  # For example, when `params[:id]` is "code_notes", it may return "code_notes" or "code_notes/index" or `nil`.
   #
   def existing_template_id
     original_template_id || fallback_template_id
   end
 
   ##
-  # When `params[:id]` is "rules", then returns "rules" if such template exists, otherwise - `nil`.
+  # When `params[:id]` is "code_notes", then returns "code_notes" if such template exists, otherwise - `nil`.
   #
   def original_template_id
     name = params[:id]
@@ -53,7 +53,7 @@ class StaticSitesController < ApplicationController
   end
 
   ##
-  # When `params[:id]` is "rules", then returns "rules/index" if such template exists, otherwise - `nil`.
+  # When `params[:id]` is "code_notes", then returns "code_notes/index" if such template exists, otherwise - `nil`.
   #
   def fallback_template_id
     name = "#{params[:id]}/index"

@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   # IMPORTANT: Regex must be as strict as it is possible.
   # See `app/controllers/static_sites_controller.rb`.
   #
-  get '/:id', to: "static_sites#show", constraints: { id: /(rules)\/?.*/ }
+  get '/:id', to: "static_sites#show", constraints: { id: /(code_notes)\/?.*/ }
 end

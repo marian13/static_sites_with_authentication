@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   # https://api.rubyonrails.org/v7.0.4/classes/ActionController/Redirecting.html#method-i-redirect_to
   #
   def index
-    redirect_to "/rules"
+    redirect_to "/code_notes"
   end
 end
