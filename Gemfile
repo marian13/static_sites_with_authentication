@@ -91,3 +91,15 @@ gem "devise"
 # Easily include static pages in your Rails app (https://github.com/thoughtbot/high_voltage).
 #
 gem "high_voltage"
+
+
+##
+# The folling gem were are auto-added by `fly launch`. Prefer NOT to modify them without a strong reason.
+# - https://fly.io/docs/rails/getting-started
+##
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.12"
+
+gem "sentry-rails", "~> 5.12"

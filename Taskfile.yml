@@ -67,7 +67,7 @@ tasks:
   #
   production:backend:console:
     cmds:
-      - fly ssh console -C "app/bin/rails console"
+      - fly ssh console -C "bin/rails console"
 
   ##
   # FIX: Does NOT work since `fly ssh console -C` does NOT wait `tail -f` to complete, it exits immediately.
@@ -78,11 +78,11 @@ tasks:
   # IMPORTANT: Make sure `RAILS_LOG_TO_STDOUT` env var is `false` in `Dockerfile.production`.
   # Use `task production:backend:output` if NOT.
   #
-  # NOTE: `/app/app` is actually Rails `app`, that is why `/app/log`, not just `log`. `/app` is created by fly.
+  # NOTE: `/rails` is created by fly.
   #
   production:backend:logs:
     cmds:
-      - fly ssh console -C "touch /app/log/production.log && tail -f /app/log/production.log"
+      - fly ssh console -C "touch log/production.log && tail -f log/production.log"
 
   ##
   # - https://fly.io/docs/rails/the-basics/run-tasks-and-consoles/#rails-console
@@ -97,7 +97,7 @@ tasks:
   ##
   # - https://fly.io/docs/rails/the-basics/deployments/#run-ad-hoc-tasks-after-deploying
   #
-  production:env:console:
+  production:bash:
     cmds:
     - fly ssh console
 
