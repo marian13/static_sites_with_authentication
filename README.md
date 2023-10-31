@@ -1,11 +1,12 @@
 # Static Sites with Authentication
 
-## Quick Reference
+## Quick Links
 
-| Component | [Environment](https://en.wikipedia.org/wiki/Deployment_environment) | Location |
-| - | - | - |
-| App | Local | [http://localhost:3000](http://localhost:3000) |
-| App | Production | [https://static-sites-with-authentication.fly.dev](https://static-sites-with-authentication.fly.dev) |
+| |  |
+| - | - |
+| Local App | [http://localhost:3000](http://localhost:3000) |
+| Production App | [https://static-sites-with-authentication.fly.dev](https://static-sites-with-authentication.fly.dev) |
+| Fly App Info | [https://fly.io/apps/static-sites-with-authentication](https://fly.io/apps/static-sites-with-authentication) |
 
 ## Installation
 
