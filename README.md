@@ -48,19 +48,19 @@ cd ~/Projects/static_sites_with_authentication && task install
 
 ### How to start a local static sites server with hot reloading?
 
-- For example, for the `rules` static site, the command looks like so:
+- For example, for the `code_notes` static site, the command looks like so:
 
   ```bash
-  cd ~/Projects/static_sites_with_authentication && task static_sites:rules:start
+  cd ~/Projects/static_sites_with_authentication && task static_sites:code_notes:start
   ```
 
 - Open [http://localhost:8000](http://localhost:8000) in your browser.
 
-**NOTE:** Hot-reloaded `rules` server has no backend access.
+**NOTE:** Hot-reloaded `code_notes` server has no backend access.
 
 ### How to add a new static site?
 
-- Check how the `static_sites:rules:build` command is implemented and used in the [Taskfile](https://github.com/marian13/static_sites_with_authentication/blob/main/Taskfile.yml).
+- Check how the `static_sites:code_notes:build` command is implemented and used in the [Taskfile](https://github.com/marian13/static_sites_with_authentication/blob/main/Taskfile.yml).
 
 - Adjust the regular expression in the [config/routes.rb](https://github.com/marian13/static_sites_with_authentication/blob/main/config/routes.rb).
 
@@ -91,8 +91,6 @@ cd ~/Projects/static_sites_with_authentication && task install
 - [Rails](https://rubyonrails.org).
 
 - [Devise](https://github.com/heartcombo/devise).
-
-- [high_voltage](https://github.com/thoughtbot/high_voltage).
 
 - [Gatsby](https://www.gatsbyjs.com/docs/quick-start).
 

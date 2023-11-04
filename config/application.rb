@@ -6,6 +6,12 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+##
+# @internal
+#   TAGS: static_sites
+#
+STATIC_SITES = ["code_notes", "docusaurus"]
+
 module StaticSitesWithAuthentication
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   }
 
   ##
-  # - https://github.com/thoughtbot/high_voltage#override
+  # @internal
+  #   IMPORTANT: Regex must be as strict as it is possible.
+  #   See `app/controllers/static_sites_controller.rb` for more info.
   #
-  # IMPORTANT: Regex must be as strict as it is possible.
-  # See `app/controllers/static_sites_controller.rb`.
+  #   TAGS: static_sites
   #
-  get '/:id', to: "static_sites#show", constraints: { id: /(code_notes)\/?.*/ }
+  get "/:file", to: "static_sites#show", constraints: { file: /(#{STATIC_SITES.join("|")})\/?.*/ }, format: false
 end

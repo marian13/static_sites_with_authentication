@@ -95,6 +95,11 @@ tasks:
     cmds:
       - fly logs
 
+  ##
+  # NOTE: Places static sites inside view so that they can be processed by controllers and tested by view helpers.
+  #
+  # TAGS: static_sites
+  #
   static_sites:build:
     cmds:
       - task: static_sites:clean

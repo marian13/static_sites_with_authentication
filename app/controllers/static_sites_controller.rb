@@ -1,74 +1,128 @@
 # frozen_string_literal: true
 
 ##
-# - https://github.com/thoughtbot/high_voltage#override
+# @internal
+#   TAGS: static_sitesS
 #
 class StaticSitesController < ApplicationController
-  include ::HighVoltage::StaticPage
+  class File
+    ##
+    # @!attribute [r] input
+    #   @return [String]
+    #
+    attr_reader :input
+
+    ##
+    # @param input [String]
+    # @return [void]
+    #
+    def initialize(input:)
+      @input = input
+    end
+
+    ##
+    # @return [String]
+    #
+    def name
+      @name ||= input.delete_suffix(".#{extension}")
+    end
+
+    ##
+    # @return [String]
+    #
+    def extension
+      @extension ||= ::File.extname(input).delete_prefix(".")
+    end
+
+    ##
+    # @return [String]
+    #
+    def path
+      @path ||= extension.present? ? "#{name}.#{extension}" : name
+    end
+
+    ##
+    # @return [String]
+    #
+    def absolute_path
+      @absolute_path ||= ::File.expand_path(::File.join(::Rails.root, "app", "views", "static_sites", path))
+    end
+
+    ##
+    # @return [Array<StaticSitesController::File>]
+    #
+    # @internal
+    #   NOTE: Works in a similar way as `import` in JS.
+    #   For example, when file `name` is "code_notes", then its alternative file names are "code_notes.html" or "code_notes/index.html".
+    #
+    def alternative_files
+      @alternative_files ||=
+        case
+        when extension.blank?
+          [File.new(input: "#{name}.html"), File.new(input: ::File.join(name, "index.html"))]
+        when extension == "html"
+          [File.new(input: ::File.join(name, "index.html"))]
+        else
+          []
+        end
+    end
+
+    ##
+    # @return [Boolean]
+    #
+    # @internal
+    #   NOTE: `File.exist?` return `true` for folders. That is why additional `!::Dir.exist?` is added.
+    #
+    def exist?
+      @exist = !::Dir.exist?(absolute_path) && ::File.exist?(absolute_path)
+    end
+  end
 
   ##
-  # IMPORTANT: It is ok to disable forgery protection here since static content is trusted.
+  # @internal
+  #   IMPORTANT: It is OK to disable forgery protection here since static content is trusted.
+  #   As a result, `protect_from_forgery except: :show` suppresses the following warning:
   #
-  # Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go
-  # ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
+  #     Security warning: an embedded <script> tag on another site requested protected JavaScript.
+  #     If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
   #
   protect_from_forgery except: :show
 
+  ##
+  # @internal
+  #   NOTE: Places `authenticate_user!` that is inherited from `ApplicationController` after `protect_from_forgery`.
+  #   This way all static sites are authenticated.
+  #
   before_action :authenticate_user!
 
+  ##
+  # @return [void]
+  #
   def show
-    ##
-    # NOTE: Needed to work in a similar way as `import` in JS.
-    #
-    params[:id] = existing_template_id || params[:id]
-
-    ##
-    # NOTE: Needed to serve js, json, etc files.
-    #
-    if extension.present?
-      params.merge!(format: extension, id: template_id_without_extension)
+    case
+    when file.exist?
+      render file: file.absolute_path
+    when file.alternative_files.any?(&:exist?)
+      render file: file.alternative_files.find(&:exist?).absolute_path
+    else
+      render_not_found
     end
-
-    super
   end
 
   private
 
   ##
-  # NOTE: Works in a similar way as `import` in JS.
-  # Tries to find the first existing template id.
-  # For example, when `params[:id]` is "code_notes", it may return "code_notes" or "code_notes/index" or `nil`.
+  # @return [StaticSitesController::File]
   #
-  def existing_template_id
-    original_template_id || fallback_template_id
+  def file
+    @file ||= File.new(input: params[:file])
   end
 
   ##
-  # When `params[:id]` is "code_notes", then returns "code_notes" if such template exists, otherwise - `nil`.
+  # @internal
+  #   - https://stackoverflow.com/a/4983354/12201472
   #
-  def original_template_id
-    name = params[:id]
-
-    name if template_exists?("static_sites/#{name}")
-  end
-
-  ##
-  # When `params[:id]` is "code_notes", then returns "code_notes/index" if such template exists, otherwise - `nil`.
-  #
-  def fallback_template_id
-    name = "#{params[:id]}/index"
-
-    name if template_exists?("static_sites/#{name}")
-  end
-
-  ##
-  #
-  #
-  def extension
-    ::File.extname(params[:id])
-  end
-
-  def template_id_without_extension
-    params[:id].delete_suffix(extension)
+  def render_not_found
+    raise ::ActionController::RoutingError
   end
 end
