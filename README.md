@@ -6,7 +6,7 @@
 | - | - |
 | Local App | [http://localhost:3000](http://localhost:3000) |
 | Production App | [https://static-sites-with-authentication.fly.dev](https://static-sites-with-authentication.fly.dev) |
-| Fly App Info | [https://fly.io/apps/static-sites-with-authentication](https://fly.io/apps/static-sites-with-authentication) |
+| Fly Stats | [https://fly.io/apps/static-sites-with-authentication](https://fly.io/apps/static-sites-with-authentication) |
 
 ## Installation
 
@@ -95,6 +95,8 @@ cd ~/Projects/static_sites_with_authentication && task install
 - [Gatsby](https://www.gatsbyjs.com/docs/quick-start).
 
 - [A starter for the "Code Notes" Gatsby theme](https://github.com/mrmartineau/gatsby-starter-code-notes).
+
+- [Docusaurus](https://docusaurus.io).
 
 - [Materialize](https://materializecss.com).
 
